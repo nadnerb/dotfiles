@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/bspinks/work/dialed'
+let g:netrw_dirhist_2='/Users/bspinks/work/jetstar/newco'
+let g:netrw_dirhist_3='/Users/bspinks/work/geoapp'
+let g:netrw_dirhist_4='/Users/bspinks/work/depot'
+let g:netrw_dirhist_5='/Users/bspinks/work/jetstar/newco'
