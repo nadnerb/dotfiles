@@ -75,9 +75,9 @@ inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
 " save file on lose of focus
-au FocusLost * :wa
-au FocusLost * :call <SID>StripTrailingWhitespaces()
-
+autocmd FocusLost * :wa
+" remove trailing whitespace
+autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 :tabnext
 
@@ -149,16 +149,4 @@ nmap <a-F7> :Ack -w <c-r><c-w><cr>
 " Bubble lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
-
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
 
