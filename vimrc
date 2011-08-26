@@ -71,6 +71,8 @@ autocmd VimEnter * wincmd p
 "inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
 
 " save file on lose of focus
 au FocusLost * :wa
@@ -133,7 +135,7 @@ nnoremap <C-l> <C-w>l
 " Ruby stuff
 " help ft-ruby-syntax
 let ruby_space_errors =1
-let ruby_fold=1
+"let ruby_fold=1
 
 " find usages
 nmap <a-F7> :Ack -w <c-r><c-w><cr>
