@@ -104,6 +104,8 @@ nmap <leader>f :FuzzyFinderFileWithFullCwd<cr>
 nmap <leader>F :FuzzyFinderTaggedFile<cr>
 nmap <leader>g :FuzzyFinderTag<cr>
 
+nmap <leader>cp :CopyPath
+
 nmap <leader>t :CommandT<cr>
 " Ack
 nnoremap <leader>a :Ack
