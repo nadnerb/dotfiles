@@ -60,6 +60,8 @@ autocmd BufNewFile,BufRead * match Error /\(  \+\t\@=\)\|\(^\(\t\+\)\zs \ze[^ *]
 " autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd p
 
+" Use _ as a word-separator
+set iskeyword-=_
 
 "nnoremap <up> <nop>
 "nnoremap <down> <nop>
@@ -104,11 +106,12 @@ nmap <leader>f :FuzzyFinderFileWithFullCwd<cr>
 nmap <leader>F :FuzzyFinderTaggedFile<cr>
 nmap <leader>g :FuzzyFinderTag<cr>
 
-nmap <leader>cp :CopyPath
+nmap <leader>cp :CopyPath<cr>
 
 nmap <leader>t :CommandT<cr>
 " Ack
 nnoremap <leader>a :Ack
+let g:CommandTMaxFiles=30000
 
 " HTML ft mapped to a “fold tag” function:
 nnoremap <leader>ft Vatzf
@@ -152,3 +155,7 @@ nmap <a-F7> :Ack -w <c-r><c-w><cr>
 nmap <C-Up> [e
 nmap <C-Down> ]e
 
+" Remove the tool bar
+if has("gui_running")
+  set guioptions=egmrt
+endif
