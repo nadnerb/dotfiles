@@ -25,7 +25,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'leshill/vim-json'
-Bundle 'leshill/vim-json'
 
 filetype plugin indent on     " required!
 syntax on
