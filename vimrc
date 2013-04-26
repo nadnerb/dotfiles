@@ -36,6 +36,12 @@ syntax on
 set number
 color molokai
 
+"number of lines
+":set lines?
+set lines=47
+" number of columns
+":set columns?
+set columns=166
 set encoding=utf-8
 set autoread " reload file whenever it changes on disk
 set wrapmargin=5
@@ -190,4 +196,6 @@ nmap <C-Down> ]e
 " Remove the tool bar
 if has("gui_running")
   set guioptions=egmrt
+  set fuoptions=maxvert,maxhorz
+  "au GUIEnter * set fullscreen
 endif
