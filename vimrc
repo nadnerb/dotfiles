@@ -1,7 +1,39 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"if has("gui_running")
+  "set guifont=Monospace\ 18  " use this font
+"endif
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'wincent/Command-T'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+Bundle 'copypath.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'leshill/vim-json'
+
+filetype plugin indent on     " required!
 syntax on
-call pathogen#runtime_append_all_bundles()
 set number
-filetype plugin indent on
 color molokai
 
 set encoding=utf-8

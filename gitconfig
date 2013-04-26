@@ -28,9 +28,9 @@
 [merge]
 	tool = meld
 [user]
-	name = Stephen Bartlett
-	email = stephenb@rtlett.org
+	name = Brendan Spinks
+	email = brendanspinks@gmail.com
 [core]
 	edit = mvim
 	editor = mvim
-  
+
