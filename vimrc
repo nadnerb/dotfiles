@@ -8,9 +8,7 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
+Bundle 'ZoomWin'
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -26,6 +24,7 @@ Bundle 'tpope/vim-rake'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'leshill/vim-json'
 Bundle 'leshill/vim-json'
 
 filetype plugin indent on     " required!
