@@ -9,7 +9,7 @@
 	patch = format-patch --stdout
 	show-branches = !git show-branch origin/master $(git branch | cut -c3-)
 	root = rev-parse --show-toplevel
-	ctags = !.git/hooks/ctags,
+	ctags = !.git/hooks/ctags
 [color]
 	branch = auto
 	diff = auto
@@ -33,7 +33,7 @@
 	email = brendanspinks@gmail.com
 [core]
 	edit = mvim
-	editor = mvim
+	editor = mvim -f
 
 [init]
 	templatedir = ~/.git_template

@@ -8,23 +8,29 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'ZoomWin'
+Bundle "Align"
+Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
-Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
 Bundle 'copypath.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-endwise'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'leshill/vim-json'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'twe4ked/vim-peepopen'
 
 filetype plugin indent on     " required!
 syntax on
@@ -62,7 +68,6 @@ set noswapfile
 set nobackup
 set showcmd
 set showmode
-set cursorline
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
@@ -82,9 +87,7 @@ set list listchars=tab:\|_,trail:.
 autocmd BufNewFile,BufRead * match Error /\(  \+\t\@=\)\|\(^\(\t\+\)\zs \ze[^ *]\)\|\([^ \t]\zs\s\+$\)/
                              match Error /\(  \+\t\@=\)\|\(^\(\t\+\)\zs \ze[^ *]\)\|\([^ \t]\zs\s\+$\)/
 
-" open NERDTree in every tab
-"autocmd VimEnter * NERDTree
-" autocmd BufEnter * NERDTreeMirror
+autocmd BufLeave,FocusLost * silent! wall
 autocmd VimEnter * wincmd p
 
 " Use _ as a word-separator
@@ -125,7 +128,6 @@ let mapleader = ";"
 map <leader>e :NERDTreeToggle<cr>
 map <leader>r :NERDTreeFind<cr>
 
-
 " ctrl+f to FuzzyFinder (recursive)
 nmap <C-f> :FuzzyFinderBuffer<cr>
 nmap <leader>b :FuzzyFinderBuffer<cr>
@@ -139,6 +141,10 @@ nmap <leader>t :CommandT<cr>
 " Ack
 nnoremap <leader>a :Ack
 let g:CommandTMaxFiles=30000
+
+" ctags split
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " HTML ft mapped to a “fold tag” function:
 nnoremap <leader>ft Vatzf
