@@ -1,72 +1,52 @@
-require 'rubygems'
-require 'pp'
+#!/usr/bin/ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
 
-# adds readline functionality
-IRB.conf[:USE_READLINE] = true
-# auto indents suites
-IRB.conf[:AUTO_INDENT] = true
-# where history is saved
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
-# how many lines to save
 IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
-# don't save duplicates
-IRB.conf[:AT_EXIT].unshift Proc.new {
-    no_dups = []
-    Readline::HISTORY.each_with_index { |e,i|
-        begin
-            no_dups << e if Readline::HISTORY[i] != Readline::HISTORY[i+1]
-        rescue IndexError
-        end
-    }
-    Readline::HISTORY.clear
-    no_dups.each { |e|
-        Readline::HISTORY.push e
-    }
-}
+IRB.conf[:PROMPT_MODE] = :SIMPLE
 
-def history_a(n=Readline::HISTORY.size)
-    size=Readline::HISTORY.size
-    Readline::HISTORY.to_a[(size - n)..size-1]
-end
-
-def decorate_h(n)
-    size=Readline::HISTORY.size
-    ((size - n)..size-1).zip(history_a(n)).map {|e| e.join(" ")}
-end
-
-def h(n=10)
-    entries = decorate_h(n)
-    puts entries
-    entries.size
-end
-
-def hgrep(word)
-    matched=decorate_h(Readline::HISTORY.size - 1).select {|h| h.match(word)}
-    puts matched
-    matched.size
-end
-
-def h!(start, stop=nil)
-    stop=start unless stop
-    code = history_a[start..stop]
-    code.each_with_index { |e,i|
-        irb_context.evaluate(e,i)
-    }   
-    Readline::HISTORY.pop
-    code.each { |l| 
-        Readline::HISTORY.push l
-    }   
-    puts code
-end
-
-
-
-class Object
-  def my_methods
-    (self.methods - Object.methods).sort
+%w[rubygems looksee/shortcuts wirble].each do |gem|
+  begin
+    require gem
+  rescue LoadError
   end
 end
 
+class Object
+  # list methods which aren't in superclass
+  def local_methods(obj = self)
+    (obj.methods - obj.class.superclass.instance_methods).sort
+  end
+
+  # print documentation
+  #
+  #   ri 'Array#pop'
+  #   Array.ri
+  #   Array.ri :pop
+  #   arr.ri :pop
+  def ri(method = nil)
+    unless method && method =~ /^[A-Z]/ # if class isn't specified
+      klass = self.kind_of?(Class) ? name : self.class.name
+      method = [klass, method].compact.join('#')
+    end
+    system 'ri', method.to_s
+  end
+end
+
+def copy(str)
+  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+end
+
+def copy_history
+  history = Readline::HISTORY.entries
+  index = history.rindex("exit") || -1
+  content = history[(index+1)..-2].join("\n")
+  puts content
+  copy content
+end
+
+def paste
+    `pbpaste`
+end

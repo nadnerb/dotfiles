@@ -14,6 +14,7 @@ Bundle "Align"
 Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'css_color.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'copypath.vim'
 Bundle 'tpope/vim-surround'
@@ -59,6 +60,7 @@ set autoindent
 set smartindent
 set mouse=a
 set modelines=0
+set clipboard=unnamed
 " allow status-bar windows (0-height)
 set wmh=0
 " set iskeyword-=_ \" allow underscore to delimit words"
@@ -74,9 +76,6 @@ set laststatus=2
 "set relativenumber
 "set undofile
 
-
-"
-"
 set tags+=.tags
 let g:autotagTagsFile=".tags"
 
@@ -112,7 +111,6 @@ autocmd FocusLost * :wa
 autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 :tabnext
-
 
 "" tab left & right
 " same for macvim (cmd key, because alt doesn't work)
