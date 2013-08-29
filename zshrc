@@ -83,4 +83,4 @@ source /usr/local/share/chruby/auto.sh
 chruby ruby-2.0.0-p247
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/heroku/bin:/usr/local/share/npm/bin/:$PATH"
