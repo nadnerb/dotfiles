@@ -1,42 +1,50 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+set guifont=Monaca:h14
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ZoomWin'
-Bundle "Align"
-Bundle 'godlygeek/tabular'
-Bundle 'wincent/Command-T'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'css_color.vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'copypath.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-endwise'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'leshill/vim-json'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'twe4ked/vim-peepopen'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ZoomWin'
+"Plugin 'Align'
+Plugin 'godlygeek/tabular'
+Plugin 'wincent/Command-T'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'css_color.vim'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'copypath.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-haml'
+"Plugin 'tpope/vim-rails'
+"Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-endwise'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'kchmck/vim-coffee-script'
+Plugin 'leshill/vim-json'
+"Plugin 'rizzatti/funcoo.vim'
+"Plugin 'rizzatti/dash.vim'
+Plugin 'twe4ked/vim-peepopen'
+Plugin 'markcornick/vim-terraform'
+Plugin 'fatih/vim-go'
 
+call vundle#end()
 filetype plugin indent on     " required!
+
 syntax on
 set number
 color molokai
+
+let mapleader = ";"
 
 set encoding=utf-8
 set autoread " reload file whenever it changes on disk
@@ -80,8 +88,8 @@ set tags+=.tags
 let g:autotagTagsFile=".tags"
 
 "draw tabs & trailing spaces
-autocmd BufNewFile,BufRead * set list listchars=tab:▸\
-set list listchars=tab:\|_,trail:.
+"autocmd BufNewFile,BufRead * set list listchars=tab:▸\
+"set list listchars=tab:\|_,trail:.
 
 autocmd BufNewFile,BufRead * match Error /\(  \+\t\@=\)\|\(^\(\t\+\)\zs \ze[^ *]\)\|\([^ \t]\zs\s\+$\)/
                              match Error /\(  \+\t\@=\)\|\(^\(\t\+\)\zs \ze[^ *]\)\|\([^ \t]\zs\s\+$\)/
@@ -92,14 +100,6 @@ autocmd VimEnter * wincmd p
 " Use _ as a word-separator
 set iskeyword-=_
 
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap jj <Esc>
@@ -120,11 +120,11 @@ map <D-k> gT
 
 "let Tlist_WinWidth = 50 map <F4> :TlistToggle<cr>
 
-let mapleader = ";"
-
 " leader-e for showing nerd-tree
 map <leader>e :NERDTreeToggle<cr>
 map <leader>r :NERDTreeFind<cr>
+" show hidden files
+let NERDTreeShowHidden=1
 
 " ctrl+f to FuzzyFinder (recursive)
 nmap <C-f> :FuzzyFinderBuffer<cr>
