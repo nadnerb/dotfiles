@@ -42,18 +42,13 @@ ZSH_THEME="tjkirch_mod"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rails ruby autojump)
+#[[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 export EDITOR=mvim
-
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
 
 #Misc
 alias f='find . -iname'
@@ -63,24 +58,33 @@ alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
 
-#Rails
-alias b='bundle'
-alias be='b exec'
-alias bedb='be rake db:migrate db:test:prepare'
-alias z='zeus'
-alias zr='z rspec'
+alias mou=open -a Mou $@
+
+# Bundler
+alias be='bundle exec'
 
 # Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 alias grep="grep --color"
 alias egrep="egrep --color"
 
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-#RUBIES=(~/.rbenv/versions/*)
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.0.0-p247
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export GRADLE_HOME=~/codez/java/gradle/gradle
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:/usr/local/share/npm/bin/:$PATH"
+export PACKER_HOME=~/codez/provisioning/packer
+export GOPATH=~/codez/nadnerb/go
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/share/npm/bin:$GRADLE_HOME/bin:$PACKER_HOME:$PATH:$GOPATH/bin"
+
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+#eval "$(rbenv init -)"
+
+#source /usr/local/opt/chruby/share/chruby/chruby.sh
+#RUBIES=(~/.rbenv/versions/*)
+#source /usr/local/share/chruby/auto.sh
+#chruby 1.9.3-p385-falcon
+
+export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
