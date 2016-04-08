@@ -68,7 +68,6 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 alias grep="grep --color"
 alias egrep="egrep --color"
 
-#export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GRADLE_HOME=~/codez/java/gradle/gradle
 
@@ -87,4 +86,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 #source /usr/local/share/chruby/auto.sh
 #chruby 1.9.3-p385-falcon
 
-export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
+export IGNORE_AUTH=true
+
+# added by travis gem
+[ -f /Users/brendanspinks/.travis/travis.sh ] && source /Users/brendanspinks/.travis/travis.sh

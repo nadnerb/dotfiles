@@ -1,6 +1,8 @@
+syntax enable
 set guifont=Monaco:h14
 set background=dark
-color solarized
+"colorscheme solarized
+colorscheme seti
 
 " no toolbar
 set go-=T

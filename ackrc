@@ -1,5 +1,8 @@
 --ignore-dir=coverage
 --ignore-dir=reports
+--ignore-dir=platforms
 --ignore-dir=tmp
 --type-add
 js=.coffee
+--type-add
+css=.scss

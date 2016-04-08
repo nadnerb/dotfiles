@@ -11,6 +11,7 @@ set guifont=Monaca:h14
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'trusktr/seti.vim'
 Plugin 'ZoomWin'
 "Plugin 'Align'
 Plugin 'godlygeek/tabular'
@@ -29,6 +30,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'kchmck/vim-coffee-script'
 Plugin 'leshill/vim-json'
 "Plugin 'rizzatti/funcoo.vim'
@@ -48,13 +50,15 @@ let mapleader = ";"
 
 set encoding=utf-8
 set autoread " reload file whenever it changes on disk
-set wrapmargin=5
+"set wrapmargin=5
+set textwidth=0
+set wrapmargin=0
 set nowrap
 set formatoptions=croqln
 set formatoptions=croqln
-set tabstop=2
 set expandtab
 set cursorline
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set ignorecase
