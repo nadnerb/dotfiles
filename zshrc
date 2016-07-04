@@ -31,17 +31,15 @@ ZSH_THEME="tjkirch_mod"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby autojump)
+plugins=(git golang python rails ruby autojump)
 #[[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
 source $ZSH/oh-my-zsh.sh
@@ -49,6 +47,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 export EDITOR=mvim
+alias vi='vim'
 
 #Misc
 alias f='find . -iname'
@@ -72,19 +71,12 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GRADLE_HOME=~/codez/java/gradle/gradle
 
 export PACKER_HOME=~/codez/provisioning/packer
-export GOPATH=~/codez/nadnerb/go
+export GOPATH=~/codez/nadnerb/go:/Users/brendanspinks/codez/provisioning/vagrant/build-box-0.2/work/go
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/share/npm/bin:$GRADLE_HOME/bin:$PACKER_HOME:$PATH:$GOPATH/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/share/npm/bin:$GRADLE_HOME/bin:$PACKER_HOME:$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin"
 
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-#eval "$(rbenv init -)"
-
-#source /usr/local/opt/chruby/share/chruby/chruby.sh
-#RUBIES=(~/.rbenv/versions/*)
-#source /usr/local/share/chruby/auto.sh
-#chruby 1.9.3-p385-falcon
 
 export IGNORE_AUTH=true
 

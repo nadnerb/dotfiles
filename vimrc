@@ -10,10 +10,21 @@ set guifont=Monaca:h14
 " required!
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'luochen1990/rainbow'
+Plugin 'tpope/vim-fireplace'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'trusktr/seti.vim'
 Plugin 'ZoomWin'
-"Plugin 'Align'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
+
+Plugin 'honza/vim-snippets'
+Plugin 'isRuslan/vim-es6'
+
 Plugin 'godlygeek/tabular'
 Plugin 'wincent/Command-T'
 Plugin 'Lokaltog/vim-easymotion'
@@ -24,6 +35,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
+Plugin 'slim-template/vim-slim.git'
 "Plugin 'tpope/vim-haml'
 "Plugin 'tpope/vim-rails'
 "Plugin 'tpope/vim-rake'
@@ -31,16 +43,15 @@ Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jelera/vim-javascript-syntax'
-"Plugin 'kchmck/vim-coffee-script'
 Plugin 'leshill/vim-json'
-"Plugin 'rizzatti/funcoo.vim'
-"Plugin 'rizzatti/dash.vim'
 Plugin 'twe4ked/vim-peepopen'
 Plugin 'markcornick/vim-terraform'
 Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on     " required!
+
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 syntax on
 set number
