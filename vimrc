@@ -10,41 +10,37 @@ set guifont=Monaca:h14
 " required!
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'luochen1990/rainbow'
-Plugin 'tpope/vim-fireplace'
-
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'luochen1990/rainbow'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-surround'
+Plugin 'twe4ked/vim-peepopen'
+Plugin 'copypath.vim'
+Plugin 'mileszs/ack.vim'
+
 Plugin 'trusktr/seti.vim'
 Plugin 'ZoomWin'
-
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'SirVer/ultisnips'
-
 Plugin 'honza/vim-snippets'
-Plugin 'isRuslan/vim-es6'
 
-Plugin 'godlygeek/tabular'
-Plugin 'wincent/Command-T'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fireplace'
 Plugin 'css_color.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'copypath.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'mileszs/ack.vim'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-fugitive'
 Plugin 'slim-template/vim-slim.git'
-"Plugin 'tpope/vim-haml'
-"Plugin 'tpope/vim-rails'
-"Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'isRuslan/vim-es6'
 Plugin 'leshill/vim-json'
-Plugin 'twe4ked/vim-peepopen'
 Plugin 'markcornick/vim-terraform'
 Plugin 'fatih/vim-go'
 
@@ -96,7 +92,7 @@ set showmode
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-"set relativenumber
+set relativenumber
 "set undofile
 
 set tags+=.tags

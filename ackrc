@@ -1,3 +1,4 @@
+--ignore-dir=log
 --ignore-dir=coverage
 --ignore-dir=reports
 --ignore-dir=platforms
