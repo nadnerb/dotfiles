@@ -44,10 +44,7 @@ plugins=(git golang python rails ruby autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-
-export EDITOR=mvim
-alias vi='vim'
+export EDITOR=vim
 
 #Misc
 alias f='find . -iname'
@@ -57,27 +54,14 @@ alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
 
-alias mou=open -a Mou $@
-
 # Bundler
 alias be='bundle exec'
+alias br='bin/rspec'
+alias brake='bin/rake'
+alias brails='bin/rails'
 
 # Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 alias grep="egrep --color"
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export GRADLE_HOME=~/codez/java/gradle/gradle
-
-export PACKER_HOME=~/codez/provisioning/packer
-export GOPATH=~/codez/nadnerb/go:/Users/brendanspinks/codez/provisioning/vagrant/build-box-0.2/work/go
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/usr/local/share/npm/bin:$GRADLE_HOME/bin:$PACKER_HOME:$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin"
-
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-export IGNORE_AUTH=true
-
-# added by travis gem
-[ -f /Users/brendanspinks/.travis/travis.sh ] && source /Users/brendanspinks/.travis/travis.sh
+if test -f "~/.local_env"; then . ~/.local_env ;fi

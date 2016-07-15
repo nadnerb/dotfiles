@@ -32,8 +32,8 @@
 	name = Brendan Spinks
 	email = brendanspinks@gmail.com
 [core]
-	edit = mvim
-	editor = mvim -f
+	edit = vim
+	editor = vim
 
 [init]
 	templatedir = ~/.git_template
