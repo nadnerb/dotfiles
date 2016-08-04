@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="muse"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -53,6 +53,7 @@ alias top='top -o cpu'
 alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
+alias vi='vim'
 
 # Bundler
 alias be='bundle exec'
@@ -64,4 +65,4 @@ alias brails='bin/rails'
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 alias grep="egrep --color"
 
-if test -f "~/.local_env"; then . ~/.local_env ;fi
+if test -e ~/.local_env; then . ~/.local_env ;fi

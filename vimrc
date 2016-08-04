@@ -13,11 +13,12 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'luochen1990/rainbow'
 
+Plugin 'ctrlpvim/ctrlp'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-surround'
-Plugin 'twe4ked/vim-peepopen'
+"Plugin 'twe4ked/vim-peepopen'
 Plugin 'copypath.vim'
 Plugin 'mileszs/ack.vim'
 
@@ -54,6 +55,11 @@ set number
 color molokai
 
 let mapleader = ";"
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+"let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
 
 set encoding=utf-8
 set autoread " reload file whenever it changes on disk
