@@ -4,13 +4,12 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-set guifont=Monaca:h14
-
 " let Vundle manage Vundle
 " required!
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'crusoexia/vim-monokai'
 Plugin 'luochen1990/rainbow'
 
 Plugin 'ctrlpvim/ctrlp'
@@ -52,7 +51,7 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
 syntax on
 set number
-color molokai
+colorscheme monokai
 
 let mapleader = ";"
 

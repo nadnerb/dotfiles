@@ -58,8 +58,7 @@ alias vi='vim'
 # Bundler
 alias be='bundle exec'
 alias br='bin/rspec'
-alias brake='bin/rake'
-alias brails='bin/rails'
+alias dbmigrate='bin/rake db:migrate && bin/rake db:test:prepare'
 
 # Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
