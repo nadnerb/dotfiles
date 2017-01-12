@@ -1,12 +1,8 @@
 syntax enable
 set guifont=Monaco:h18
 set background=dark
-colorscheme molokai
-"colorscheme solarized
-"colorscheme seti
+colorscheme solarized
 
-" fullscreen
-set fu
 " no toolbar
 set go-=T
 " no right scrollbar
